@@ -59,7 +59,7 @@ const Product = () => {
                 {props.title} // {props.QTYinStock}{" "}
               </div>
               <div className="relative w-[100%] h-[20px] flex ">
-                <div className="text-[12px] absolute top-0 left-0 z-[1] ">
+                <div className="text-[12px] absolute top-0 left-0 -z-20 ">
                   {"⭐".repeat(props.rating)}
                 </div>
                 <div className="text-[12px] absolute top-0 left-0 opacity-[0.2]">
