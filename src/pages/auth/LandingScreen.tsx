@@ -1,7 +1,9 @@
 
 const LandingScreen = () => {
   return (
-    <div>LandingScreen</div>
+    <div className="w-full h-[120vh] ">
+        <div>LandingScreen</div>
+    </div>
   )
 }
 

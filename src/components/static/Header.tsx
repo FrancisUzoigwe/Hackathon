@@ -47,9 +47,8 @@ const Header = () => {
               </div>
               <div
                 className="flex items-center relative justify-center "
-                onClick={() => {
-                  onShow();
-                }}
+                onMouseEnter={onShow}
+                onMouseLeave={onShow}
               >
                 <div className="font-bold max-sm:hidden">Kossyrisochukwu</div>
                 <div className="ml-2 max-sm:hidden ">
@@ -86,9 +85,8 @@ const Header = () => {
               </div>
               <div
                 className="flex items-center relative justify-center "
-                onClick={() => {
-                  onShow();
-                }}
+                onMouseEnter={onShow}
+                onMouseLeave={onShow}
               >
                 <div className="font-bold max-sm:hidden">Kossyrisochukwu</div>
                 <div className="ml-2 max-sm:hidden ">

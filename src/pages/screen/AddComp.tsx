@@ -12,7 +12,10 @@ const AddComp = () => {
           <IoIosCreate />
         </Link>
         <Link to="/check-out">
-          <AiOutlineShoppingCart />
+          <div className="ml-2">
+          
+            <AiOutlineShoppingCart />
+          </div>
           <div className="flex items-center justify-center rounded-full bg-red-500 text-white text-[12px] w-[20px] h-[20px] absolute top-1 right-2  ">
             {cart.length}
           </div>
