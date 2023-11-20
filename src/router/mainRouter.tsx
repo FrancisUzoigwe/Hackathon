@@ -12,6 +12,14 @@ import RegisterScreen from "../pages/auth/RegisterScreen";
 
 export const mainRouter = createBrowserRouter([
   {
+    path: "/sign-in",
+    element: <SigninScreen />,
+  },
+  {
+    path: "/register",
+    element: <RegisterScreen />,
+  },
+  {
     path: "/auth",
     element: <FirstLayout />,
     children: [
@@ -26,7 +34,7 @@ export const mainRouter = createBrowserRouter([
     path: "/",
     element: (
       // <PrivateRouter>
-        <Layout />
+      <Layout />
       // </PrivateRouter>
     ),
     children: [
@@ -45,14 +53,6 @@ export const mainRouter = createBrowserRouter([
       {
         path: "/add-product",
         element: <AddProduct />,
-      },
-      {
-        path: "/sign-in",
-        element: <SigninScreen />,
-      },
-      {
-        path: "/register",
-        element: <RegisterScreen />,
       },
     ],
   },
