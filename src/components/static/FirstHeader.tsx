@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [short, setShort] = useState<boolean>(false);
   const onShort = () => {
@@ -27,9 +28,7 @@ const Header = () => {
           }}
         >
           <div className=" w-[95%] flex items-center transition-all duration-300 justify-between ">
-            <div className=" font-bold hover:cursor-pointer">
-              Logo
-            </div>
+            <div className=" font-bold hover:cursor-pointer">Logo</div>
             <div className="flex items-center hover:cursor-pointer">
               <div className="flex flex-col items-center">
                 <div
@@ -42,9 +41,11 @@ const Header = () => {
                 </div>
               </div>
               <div className="flex items-center relative justify-center ">
-                <button className="max-sm:hidden px-4 py-2 rounded-md bg-purple-600 text-white font-bold">
-                  Get Started
-                </button>
+                <Link to="/sign-in">
+                  <button className="max-sm:hidden px-4 py-2 rounded-md bg-purple-600 text-white font-bold">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -67,9 +68,11 @@ const Header = () => {
                 </div>
               </div>
               <div className="flex items-center relative justify-center ">
-                <button className="max-sm:hidden px-4 py-2 rounded-md bg-white text-purple-600 font-bold">
-                  Get Started
-                </button>
+                <Link to="/sign-in">
+                  <button className="max-sm:hidden px-4 py-2 rounded-md bg-white text-purple-600 font-bold">
+                    Get Started
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

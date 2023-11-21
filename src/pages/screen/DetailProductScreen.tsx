@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { updateToggleProduct } from "../../api/API";
 
 interface iProps {
@@ -10,12 +10,6 @@ interface iProps {
 
 const DetailProductScreen: React.FC<iProps> = ({ props }) => {
   const { productID } = useParams();
-
-  console.log(props);
-
-  // const data = useSelector((state: any) => state.product).find((el: any) => {
-  //   return el._id === productID;
-  // });
 
   const [state, setState] = useState<number>(0);
 
@@ -103,10 +97,8 @@ const DetailProductScreen: React.FC<iProps> = ({ props }) => {
               </div>
             </div>
             <div
-              className="flex items-center h-[50px] ml-3 text-white bg-black px-4 hover:cursor-pointer duration-300 transition-all hover:scale-[1.02] rounded-sm "
-              onClick={() => {
-                // setToggle(false);
-              }}
+              className="flex items-center h-[50px] ml-3 text-white bg-black px-4 hover:cursor-pointer duration-300 transition-all hover:scale-[1.02] rounded-md "
+              onClick={() => {}}
             >
               Add to Cart
             </div>

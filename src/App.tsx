@@ -2,20 +2,22 @@ import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import { store } from "./global/store";
 import { Provider } from "react-redux";
-import ProductScreen from "./pages/screen/ProductScreen";
 import { mainRouter } from "./router/mainRouter";
 import { RouterProvider } from "react-router-dom";
-import AddComp from "./pages/screen/AddComp";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 let persistor = persistStore(store);
+let client = new QueryClient();
 const App = () => {
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <div>
-          <RouterProvider router={mainRouter} />
-        </div>
-      </PersistGate>
-    </Provider>
+    <div>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <QueryClientProvider client={client}>
+            <RouterProvider router={mainRouter} />
+          </QueryClientProvider>
+        </PersistGate>
+      </Provider>
+    </div>
   );
 };
 

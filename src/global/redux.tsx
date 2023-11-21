@@ -21,8 +21,6 @@ const redux = createSlice({
         };
         state.cart.push(data);
       }
-
-      //
     },
 
     removeFromCart: (state: any, { payload }) => {

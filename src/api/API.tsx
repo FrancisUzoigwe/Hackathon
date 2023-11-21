@@ -15,6 +15,7 @@ export const readProduct = async () => {
   });
 };
 
+
 export const readOneProduct = async (productID: string) => {
   return await axios
     .get(`${URL}/view-one-product/${productID}`)
@@ -23,6 +24,13 @@ export const readOneProduct = async (productID: string) => {
     });
 };
 
+export const addToUserCart = async (productID: string, userID:string) => {
+  return await axios
+    .patch(`${URL}/add-to-cart/${userID}/${productID}`)
+    .then((res: any) => {
+      return res.data.data;
+    });
+};
 export const updateStockProduct = async (productID: string, data: number) => {
   return await axios
     .patch(`${URL}/update-stock-product/${productID}`, { QTYPurchased: data })
