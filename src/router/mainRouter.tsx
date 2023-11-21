@@ -9,6 +9,7 @@ import Layout from "../components/common/Layout";
 import PrivateRouter from "./PrivateRouter";
 import SigninScreen from "../pages/auth/SigninScreen";
 import RegisterScreen from "../pages/auth/RegisterScreen";
+import HomePage from "../pages/screen/HomePage";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterScreen />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
   },
   {
     path: "/auth",
