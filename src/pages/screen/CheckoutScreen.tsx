@@ -1,5 +1,6 @@
 import { AiFillDelete, AiOutlineRight } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   addToCart,
   emptyCart,
@@ -12,7 +13,6 @@ const CheckoutScreen = () => {
   let dispatch = useDispatch();
   let cart = useSelector((state: any) => state.cart);
 
-  console.log(cart);
   return (
     <div className="mt-10">
       <div className="w-full flex justify-center mb-8 ">
@@ -86,24 +86,30 @@ const CheckoutScreen = () => {
       <div className="w-full flex justify-center mb-8 ">
         <div className="w-[95%] border rounded-md p-3 ">
           <div className="flex justify-between items-center">
-            <div>{cart.length} Items</div>
+            <div>{cart?.length} Items</div>
             <div>
               ₦
-              {cart.reduce((a: any, b: any) => a.cost * a.QTY + b.cost * b.QTY)}
+              {cart?.reduce(
+                (a: number | any, b: number | any) =>
+                  a.cost * a.QTY + b.cost * b.QTY,
+                0
+              )}
             </div>
           </div>
 
-          <button
-            className="bg-black text-white w-full mt-4 h-12 rounded-md duration-300 transition-all hover:scale-[1.004] "
-            onClick={() => {
-              for (let i of cart) {
-                updateStockProduct(i._id, i.QTY);
-                dispatch(emptyCart());
-              }
-            }}
-          >
-            Process
-          </button>
+          <Link to="/validator">
+            <button
+              className="bg-black text-white w-full mt-4 h-12 rounded-md duration-300 transition-all hover:scale-[1.004] "
+              onClick={() => {
+                for (let i of cart) {
+                  updateStockProduct(i._id, i.QTY);
+                  dispatch(emptyCart());
+                }
+              }}
+            >
+              Process
+            </button>
+          </Link>
         </div>
       </div>
     </div>

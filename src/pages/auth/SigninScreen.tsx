@@ -9,6 +9,7 @@ import LoadingScreen from "../screen/LoadingScreen";
 import { signinUser } from "../../api/authApi";
 import { useDispatch } from "react-redux";
 import { mainUser } from "../../global/redux";
+import Swal from "sweetalert2";
 
 const RegisterScreen = () => {
   const navigate = useNavigate();
@@ -43,8 +44,23 @@ const RegisterScreen = () => {
     const { email, password } = data;
     signinUser({ email, password }).then((res: any) => {
       dispatch(mainUser(res));
-      navigate("/");
-      setLoading(false);
+      if (res) {
+        Swal.fire({
+          title: "Success",
+          text: "Signed in successfully",
+          icon: "success",
+        });
+        navigate("/");
+        setLoading(false);
+      } else {
+        Swal.fire({
+          title: "Error occured",
+          icon: "error",
+          text: "Please check your password",
+        });
+        navigate("/sign-in");
+        setLoading(false);``
+      }
     });
   });
   return (

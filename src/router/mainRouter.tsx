@@ -9,7 +9,8 @@ import Layout from "../components/common/Layout";
 import PrivateRouter from "./PrivateRouter";
 import SigninScreen from "../pages/auth/SigninScreen";
 import RegisterScreen from "../pages/auth/RegisterScreen";
-import LoadingScreen from "../pages/screen/LoadingScreen";
+import HomePage from "../pages/screen/HomePage";
+import ValidatorScreen from "../pages/screen/ValidatorScreen";
 
 export const mainRouter = createBrowserRouter([
   {
@@ -39,6 +40,11 @@ export const mainRouter = createBrowserRouter([
         path: "/add-product",
         element: <AddProduct />,
       },
+      {
+        index: true,
+        path: "/validator",
+        element: <ValidatorScreen />,
+      },
     ],
   },
   {
@@ -48,6 +54,10 @@ export const mainRouter = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterScreen />,
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
   },
   {
     path: "/auth",

@@ -58,17 +58,24 @@ const Product = () => {
                   >
                     View Product
                   </div>
-                  <div
+                  {
+                    props.QTYinStock > 0 ? <div
                     className="flex items-center h-[40px] mx-1 text-white bg-black px-3 hover:cursor-pointer duration-300 transition-all hover:scale-[1.02] rounded-sm text-[12px] text-center leading-tight font-bold"
                     onClick={() => {
                       dispatch(addToCart(props));
                     }}
                   >
                     Add to Cart
+                  </div> : <div
+                    className="flex items-center h-[40px] mx-1 text-white bg-[#c0b7b7] px-3 hover:cursor-pointer duration-300 transition-all hover:scale-[1.02] rounded-sm text-[12px] text-center leading-tight font-bold"
+                    
+                  >
+                    Add to Cart
                   </div>
+                  }
                 </div>
-                <div className="font-bold">
-                  {props.title} // {props.QTYinStock}{" "}
+                <div className="font-[650]">
+                  {props.title} || {props.QTYinStock <= 0 ? "Out Of Stock": props.QTYinStock }{" "}
                 </div>
                 <div className="relative w-[100%] h-[20px] flex ">
                   <div className="text-[12px] absolute top-0 left-0 -z-20 ">

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { MdOutlineMenu } from "react-icons/md";
+import { SiShopware } from "react-icons/si";
 import { Link } from "react-router-dom";
 const Header = () => {
   const [short, setShort] = useState<boolean>(false);
@@ -20,7 +21,7 @@ const Header = () => {
     <div className="flex items-center justify-center w-full h-[50px]">
       {scroll ? (
         <div
-          className="w-full fixed transition-all duration-300 h-[55px] flex justify-center items-center"
+          className="w-full z-30 fixed transition-all duration-300 h-[55px] flex justify-center items-center"
           style={{
             backdropFilter: "blur(10px)",
             height: "50px",
@@ -28,7 +29,9 @@ const Header = () => {
           }}
         >
           <div className=" w-[95%] flex items-center transition-all duration-300 justify-between ">
-            <div className=" font-bold hover:cursor-pointer">Logo</div>
+            <div className=" font-bold hover:cursor-pointer">
+              <SiShopware className="text-3xl" />
+            </div>
             <div className="flex items-center hover:cursor-pointer">
               <div className="flex flex-col items-center">
                 <div
@@ -51,10 +54,10 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <div className="w-full  fixed bg-purple-600  transition-all duration-300 h-[55px] flex justify-center items-center">
+        <div className="w-full z-30 fixed bg-purple-600  transition-all duration-300 h-[55px] flex justify-center items-center">
           <div className=" w-[95%] flex items-center transition-all duration-300 justify-between">
             <div className="text-white font-bold hover:cursor-pointer">
-              Logo
+              <SiShopware className="text-3xl" />
             </div>
             <div className="flex items-center hover:cursor-pointer">
               <div className="flex flex-col items-center">
